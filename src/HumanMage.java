@@ -15,55 +15,9 @@ public class HumanMage extends Player{
             System.out.println("Ultimate Cost = " + this.getUltimateCost());
             System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         }
-
-        @Override
-        public void rest(){
-            int currentPower = this.getCurrentPower();
-            this.setCurrentPower(currentPower+3);
-        }
-
-        @Override
-        public void descend(){
-            int currentPower = this.getCurrentPower();
-            this.setCurrentLevel(getCurrentLevel() + 1);
-            this.setCurrentPower(currentPower-getDescendCost());
-        }
-
-        @Override
-        public void fastDescend(){
-            int currentPower = this.getCurrentPower();
-            this.setCurrentLevel(getCurrentLevel() + 3);
-            this.setCurrentPower(currentPower-getFastDescendCost());
-        }
-
+        //не вижу смысла переопределять методы абстрактного родителя, т.к. они все делают одно и то же.
         @Override
         public int ultimate(){
-
             return 1;
-        }
-
-        @Override
-        public void ultimateUse(){
-            int currentPower = this.getCurrentPower();
-            this.setCurrentPower(currentPower-getUltimateCost());
-        }
-
-        @Override
-        public void endOfTheMove(){
-            int currentPower = this.getCurrentPower();
-            this.setCurrentPower(currentPower + 2);
-        }
-        @Override
-        public void showStats(){
-            System.out.println("~~~~~~~~~~~~~~");
-            System.out.println("You're playing as a Human Mage");
-            System.out.println("Your maximum power is 30 " + "Your current power is " + getCurrentPower());
-            System.out.println("Your abilities:");
-            System.out.println("Rest: gain 3 power");
-            System.out.println("Descend: move one level down");
-            System.out.println("Fast descend: move 3 levels down");
-            System.out.println("Ultimate: Switch places with the player one level lower if there is one");
-            System.out.println("otherwise moves 1 level down");
-            System.out.println("~~~~~~~~~~~~~~");
         }
 }

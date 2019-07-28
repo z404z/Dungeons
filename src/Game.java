@@ -15,12 +15,10 @@ public class Game {
     String getPlayerOneName(){ return playerOneName; }
 
     private String playerTwoName;
-    void setPlayerTwoName(String name) {
-        playerTwoName = name;
-    }
+    void setPlayerTwoName(String name) { playerTwoName = name; }
     String getPlayerTwoName(){ return playerTwoName; }
 
-    private String classPlayerOne;//можно и нужно сделать private
+    private String classPlayerOne;
     void setClassPlayerOne(String input){ classPlayerOne = input; }
     String getClassPlayerOne(){ return classPlayerOne; }
 
@@ -42,14 +40,14 @@ public class Game {
     void selectClass(){
         //Проверяю ввод, вызываю отдельные методы для создания объектов классов
         System.out.println("Player one choose your name: ");
-        setPlayerOneName(scannerPlayerOne.nextLine());                  //name for player 1
+            setPlayerOneName(scannerPlayerOne.nextLine());                  //name for player 1
         System.out.println("Player one choose your class!");
         System.out.println("Available classes:");
         System.out.println(Arrays.toString(classes));
         System.out.println("Choose your class (1-3): ");
-        checkInputPlayerOne();
+            checkInputPlayerOne();
         System.out.println("Player two choose your name: ");
-        setPlayerTwoName(scannerPlayerTwo.nextLine());                  //name for player 2
+            setPlayerTwoName(scannerPlayerTwo.nextLine());                  //name for player 2
         System.out.println("Player two choose your class!");
         System.out.println("Available classes:");
         System.out.println(Arrays.toString(classes));
@@ -127,6 +125,7 @@ public class Game {
                 }
                 break;
             }
+
             if (getClassPlayerTwo().equals("2")) {
                 if (!classes[1].equals("taken")) {
                     classes[1] = "taken";
@@ -165,14 +164,13 @@ public class Game {
         System.out.println("######################################################################");
         System.out.println("You're playing Dungeons!");
         System.out.println("######################################################################");
-        selectClass();
+            selectClass();
         System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         System.out.println("Game begins!");
         //Choosing random player
         Random random = new Random();
-        int randomNum = random.nextInt(1);
-        //String name = playersBeforeTheStart.get(randomNum).getName(); //System.out.println(name);
-        //making new list with random player first
+        int randomNum = random.nextInt(2);
+        //в список игроков добавляем согласно случайному числу первого игрока
         players.add(playersBeforeTheStart.get(randomNum));
         if (randomNum == 1){
             players.add(playersBeforeTheStart.get(0));
@@ -180,7 +178,7 @@ public class Game {
         else {
             players.add(playersBeforeTheStart.get(1));
         }
-
+        System.out.println(players.get(0).getName() + " is the first to make a move!");
         while (!gameFinished){
             move();
         }
@@ -211,7 +209,7 @@ public class Game {
         setCurrentMove(action.nextLine());
 
         while (currentMove.equals("1") | currentMove.equals("2") | currentMove.equals("3") | currentMove.equals("4")){
-            if (currentMove.equals("1")){
+            if (currentMove.equals("1")){//1 = rest
                 player.rest();                                                      //power + 3 /// checking if higher than maxPower
                 if(player.getCurrentPower() >= player.getMaxPower()){
                     player.setCurrentPower(player.getMaxPower());
@@ -221,6 +219,7 @@ public class Game {
                     if(!dwarfUltimates.isEmpty()){//каждый ход мы убираем из списка одно использование ульты
                         dwarfUltimates.remove(0);
                     }
+                    break;
                 }
                 else {
                     player.endOfTheMove();
@@ -470,6 +469,6 @@ public class Game {
     void finishGame(Player player){
         gameFinished = true;
         System.out.println("Game over!");
-        System.out.println("The winner is : " + player.getName() + " !");
+        System.out.println("The winner is: " + player.getName() + " !");
     }
 }

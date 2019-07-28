@@ -15,50 +15,10 @@ public class DwarfWarrior extends Player{
             System.out.println("Ulitmate Cost = " + this.getUltimateCost());
             System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     }
-
-        @Override
-        public void rest(){
-            int currentPower = this.getCurrentPower();
-            this.setCurrentPower(currentPower+3);
-        }
-        @Override
-        public void descend(){
-            int currentPower = this.getCurrentPower();
-            this.setCurrentLevel(getCurrentLevel() + 1);
-            this.setCurrentPower(currentPower-getDescendCost());
-        }
-        @Override
-        public void fastDescend(){
-            int currentPower = this.getCurrentPower();
-            this.setCurrentLevel(getCurrentLevel() + 3);
-            this.setCurrentPower(currentPower-getFastDescendCost());
-        }
+        //не вижу смысла переопределять методы абстрактного родителя, т.к. они все делают одно и то же.
         @Override
         public int ultimate(){
-
             return 2;
         }
-        @Override
-        public void ultimateUse(){
-            int currentPower = this.getCurrentPower();
-            this.setCurrentPower(currentPower-getUltimateCost());
-        }
-        @Override
-        public void endOfTheMove(){
-            int currentPower = this.getCurrentPower();
-            this.setCurrentPower(currentPower + 2);
-        }
-        @Override
-        public void showStats(){
-            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-            System.out.println("You're playing as a Gnome Warrior");
-            System.out.println("Your maximum power is 50 " + "Your current power is " + getCurrentPower());
-            System.out.println("Your abilities:");
-            System.out.println("Rest: gain 3 power");
-            System.out.println("Descend: move one level down");
-            System.out.println("Fast descend: move 3 levels down");
-            System.out.println("Ultimate: Moves player 1 level lower. Others aren't able to neither outrun him,");
-            System.out.println("nor get one the same level with him");
-            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-        }
+
 }

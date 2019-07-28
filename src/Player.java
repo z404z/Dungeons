@@ -8,7 +8,6 @@ abstract class Player {
 
     private int maxPower ;
     public int getMaxPower(){ return maxPower; }
-    //public void setMaxPower(int power){ maxPower = power; }
 
     private int descendCost;
     public int getDescendCost(){ return descendCost; }
@@ -23,9 +22,6 @@ abstract class Player {
     public void setCurrentLevel(int level){ currentLevel = level; }
     public int getCurrentLevel(){ return currentLevel; }
 
-    private boolean ultimateUsed;
-    public void setUltimateUsed(boolean used){ ultimateUsed = used; }
-    public boolean getUltimateUsed(){ return ultimateUsed; }
 
     public Player(String playerName, int currentPower, int maxPower, int descendCost, int fastDescent, int ultimateCost, int currentLevel){
         this.name = playerName;
@@ -37,15 +33,33 @@ abstract class Player {
         this.currentLevel = currentLevel;
     }
 
-    public abstract void rest();
-    public abstract void descend();
-    public abstract void fastDescend();
+    //public abstract void rest();
+    public void rest(){
+        int currentPower = this.getCurrentPower();
+        this.setCurrentPower(currentPower+3);
+    }
+    //public abstract void descend();
+    public void descend(){
+        int currentPower = this.getCurrentPower();
+        this.setCurrentLevel(getCurrentLevel() + 1);
+        this.setCurrentPower(currentPower-getDescendCost());
+    }
+    //public abstract void fastDescend();
+    public void fastDescend(){
+        int currentPower = this.getCurrentPower();
+        this.setCurrentLevel(getCurrentLevel() + 3);
+        this.setCurrentPower(currentPower-getFastDescendCost());
+    }
+    //единственный абстрактный метод, т.к. полиморфизм
     public abstract int ultimate();
-    public abstract void ultimateUse();
-    public abstract void showStats();
-    public abstract void endOfTheMove();
-//////////////////////////////////////////////////////////////
-
-
-
+    //public abstract void ultimateUse();
+    public void ultimateUse(){
+        int currentPower = this.getCurrentPower();
+        this.setCurrentPower(currentPower-getUltimateCost());
+    }
+    //public abstract void endOfTheMove();
+    public void endOfTheMove(){
+        int currentPower = this.getCurrentPower();
+        this.setCurrentPower(currentPower + 2);
+    }
 }

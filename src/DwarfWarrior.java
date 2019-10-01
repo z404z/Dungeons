@@ -15,7 +15,7 @@ public class DwarfWarrior extends Player{
             System.out.println("Ulitmate Cost = " + this.getUltimateCost());
             System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     }
-        //не вижу смысла переопределять методы абстрактного родителя, т.к. они все делают одно и то же.
+
         @Override
         public int ultimate(){
             return 2;

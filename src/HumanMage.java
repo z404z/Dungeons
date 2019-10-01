@@ -15,7 +15,7 @@ public class HumanMage extends Player{
             System.out.println("Ultimate Cost = " + this.getUltimateCost());
             System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         }
-        //не вижу смысла переопределять методы абстрактного родителя, т.к. они все делают одно и то же.
+
         @Override
         public int ultimate(){
             return 1;

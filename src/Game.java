@@ -170,27 +170,31 @@ public class Game {
         System.out.println("The goal is to reach 20th level first");
         System.out.println("There are 3 classes players can choose from: Human-Mage, Dwarf-Warrior and Elf-Scout");
         System.out.println("Each class have 4 abilities: Fast Descend, Descend, Rest, Ultimate");
-        System.out.println("-------------------------------------------------");
-        System.out.println("Race     MaxStamina     FastDescend     Ultimate");
-        System.out.println("Human        30              13            15   ");
-        System.out.println("Dwarf        50              15            20   ");
-        System.out.println("Elf          40              12            24   ");
-        System.out.println("-------------------------------------------------");
+        System.out.println("And of course, the abilities cost stamina");
+        System.out.println("Rest and Descend cost the same for each class");
+        System.out.println("But Ultimate and Fast Descend are different");
+        System.out.println("Here is a list of abilities and required stamina");
+        System.out.println("------------------------------------------------------------");
+        System.out.println("Race     MaxStamina     Descend     FastDescend     Ultimate");
+        System.out.println("Human        30            5            13             15   ");
+        System.out.println("Dwarf        50            5            15             20   ");
+        System.out.println("Elf          40            5            12             24   ");
+        System.out.println("------------------------------------------------------------");
         System.out.println("All abilities perform same actions except for the Ultimate");
         System.out.println("Which is different for every class");
-        System.out.println("Fast Descend:  moves you 3 levels further with a cost depending on a class");
-        System.out.println("Descend:       moves you further on 1 level and costs 5 power");
-        System.out.println("Rest:          gives you 3 power-points");
+        System.out.println("Fast Descend:  Moves you 3 levels further with a cost depending on a class");
+        System.out.println("Descend:       Moves you further on 1 level and costs 5 power");
+        System.out.println("Rest:          Gives you 3 power-points");
         System.out.println("Ultimate abilities are a bit more complicated:");
-        System.out.println("Human:  If there is another player on the level below, switch places or move 1 level below");
-        System.out.println("Dwarf:  Moves player 1 level below. Until the next move no one can either outrun him, nor get " +
+        System.out.println("Human:         If there is another player on the level below, switch places or move 1 level below");
+        System.out.println("Dwarf:         Moves player 1 level below. Until the next move no one can either outrun him, nor get " +
                 "on the same level as him");
-        System.out.println("Elf:    Moves 3 levels below");
+        System.out.println("Elf:           Moves 3 levels below");
         System.out.println("Also, at the end of the each move each player regains 2 power");
+        System.out.println("And by the way, the first player is chosen randomly");
         System.out.println("Now, you're good to go!");
         System.out.println("Good Luck!");
             selectClass();
-        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         System.out.println("Game begins!");
         //Choosing random player
         Random random = new Random();

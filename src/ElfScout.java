@@ -15,7 +15,7 @@ public class ElfScout extends Player{
             System.out.println("Energy = " + this.getUltimateCost());
             System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         }
-        //не вижу смысла переопределять методы абстрактного родителя, т.к. они все делают одно и то же.
+
         @Override
         public int ultimate(){
             return 3;

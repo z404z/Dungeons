@@ -164,6 +164,31 @@ public class Game {
         System.out.println("######################################################################");
         System.out.println("You're playing Dungeons!");
         System.out.println("######################################################################");
+        System.out.println("The rules are simple!");
+        System.out.println("This game is for two players");
+        System.out.println("You play as adventurers who move down the mine");
+        System.out.println("The goal is to reach 20th level first");
+        System.out.println("There are 3 classes players can choose from: Human-Mage, Dwarf-Warrior and Elf-Scout");
+        System.out.println("Each class have 4 abilities: Fast Descend, Descend, Rest, Ultimate");
+        System.out.println("-------------------------------------------------");
+        System.out.println("Race     MaxStamina     FastDescend     Ultimate");
+        System.out.println("Human        30              13            15   ");
+        System.out.println("Dwarf        50              15            20   ");
+        System.out.println("Elf          40              12            24   ");
+        System.out.println("-------------------------------------------------");
+        System.out.println("All abilities perform same actions except for the Ultimate");
+        System.out.println("Which is different for every class");
+        System.out.println("Fast Descend:  moves you 3 levels further with a cost depending on a class");
+        System.out.println("Descend:       moves you further on 1 level and costs 5 power");
+        System.out.println("Rest:          gives you 3 power-points");
+        System.out.println("Ultimate abilities are a bit more complicated:");
+        System.out.println("Human:  If there is another player on the level below, switch places or move 1 level below");
+        System.out.println("Dwarf:  Moves player 1 level below. Until the next move no one can either outrun him, nor get " +
+                "on the same level as him");
+        System.out.println("Elf:    Moves 3 levels below");
+        System.out.println("Also, at the end of the each move each player regains 2 power");
+        System.out.println("Now, you're good to go!");
+        System.out.println("Good Luck!");
             selectClass();
         System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         System.out.println("Game begins!");
@@ -179,11 +204,13 @@ public class Game {
             players.add(playersBeforeTheStart.get(1));
         }
         System.out.println(players.get(0).getName() + " is the first to make a move!");
+        //циклично крутим ходы, пока не кончится игра
+        //Каждый ход берется игрок из коллекции
         while (!gameFinished){
             move();
         }
 
-    }//Main method
+    }//Initial method
 
     void action(Player player, Player otherPlayer){
         //Приветствие и описание способностей
@@ -196,9 +223,8 @@ public class Game {
         //Тот не сможет двигаться 1 ход.(провоцирует использование Rest ability)
         //В условии не описан подобный прецедент
         //Его можно было бы решить возвратом соперника Дворфа на этаж выше и запретом движения.
-        //Но Дворф не разбойник, а воин.
-        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!New Move!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        //Но Дворф не подлый разбойник, а доблесный воин.
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~New Move~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         System.out.println(player.getName() + ", your current stamina is: " + player.getCurrentPower() + "!");
         System.out.println("You're on " + player.getCurrentLevel() + " level!");
         System.out.println("Use your ability! Use numbers to perform input(1-4)");
@@ -207,7 +233,8 @@ public class Game {
         System.out.println("3)Descend[-5 stamina], 4)Ultimate[-" + player.getUltimateCost() + " stamina]");
 
         setCurrentMove(action.nextLine());
-
+        //каждый ход записывается
+        //проваленные проверки ввода вызывают action() рекурсивно
         while (currentMove.equals("1") | currentMove.equals("2") | currentMove.equals("3") | currentMove.equals("4")){
             if (currentMove.equals("1")){//1 = rest
                 player.rest();                                                      //power + 3 /// checking if higher than maxPower
@@ -456,10 +483,10 @@ public class Game {
     void move(){
         if (!gameFinished){
             for (Player player : players){          //выбираем игроков поочереди
-                if(!gameFinished){
-                    playersCopy.addAll(players);    //Передам два объекта методу action для реализации ульты
-                    playersCopy.remove(player);     //Сначала копирую список и удаляю из него текущий,
-                    Player otherPlayer = playersCopy.get(0);//а после выну из копии другой объект
+                if(!gameFinished){                  //Передам два объекта методу action для реализации способностей
+                    playersCopy.addAll(players);    //Нам надо передать в метод action() двух игроков
+                    playersCopy.remove(player);     //выбранного в foreach и второго для сравнения параметров
+                    Player otherPlayer = playersCopy.get(0);//поэтому делаю резервную коллекцию
                     action(player, otherPlayer);    //выбираем игрока и ждем, пока он успешно осуществит действие
                 }
             }

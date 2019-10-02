@@ -70,7 +70,7 @@ public class Game {
                     break;
                 }
                 else{
-                    System.out.println("Human Mage is taken. Choose another class.");
+                    System.out.println("(!)Human Mage is taken. Choose another class.");
                     checkInputPlayerOne();
                 }
             }
@@ -82,7 +82,7 @@ public class Game {
                     break;
                 }
                 else{
-                    System.out.println("Dwarf Warrior is taken. Choose another class.");
+                    System.out.println("(!)Dwarf Warrior is taken. Choose another class.");
                     checkInputPlayerOne();
                 }
             }
@@ -94,13 +94,13 @@ public class Game {
                     break;
                 }
                 else{
-                    System.out.println("Elf Scout is taken. Choose another class.");
+                    System.out.println("(!)Elf Scout is taken. Choose another class.");
                     checkInputPlayerOne();
                 }
             }
         }
         if (!getClassPlayerOne().equals("1") & !getClassPlayerOne().equals("2") & !getClassPlayerOne().equals("3")) {
-            System.out.println("Wrong input.");
+            System.out.println("(!)Wrong input.");
             System.out.println("Choose your class (1-3): ");
             checkInputPlayerOne();
         }
@@ -120,7 +120,7 @@ public class Game {
                     HumanMage playerTwo = new HumanMage(getPlayerTwoName(), 30, 30, 5, 13, 15, 1);
                     playersBeforeTheStart.add(playerTwo);
                 } else {
-                    System.out.println("Human Mage is taken. Choose another class.");
+                    System.out.println("(!)Human Mage is taken. Choose another class.");
                     checkInputPlayerTwo();
                 }
                 break;
@@ -132,7 +132,7 @@ public class Game {
                     DwarfWarrior playerTwo = new DwarfWarrior(getPlayerTwoName(), 50, 50, 5, 15, 20, 1);
                     playersBeforeTheStart.add(playerTwo);
                 } else {
-                    System.out.println("Dwarf Warrior is taken. Choose another class.");
+                    System.out.println("(!)Dwarf Warrior is taken. Choose another class.");
                     checkInputPlayerTwo();
                 }
                 break;
@@ -143,13 +143,13 @@ public class Game {
                     ElfScout playerTwo = new ElfScout(getPlayerTwoName(), 40, 40, 5, 12, 24, 1);
                     playersBeforeTheStart.add(playerTwo);
                 } else {
-                    System.out.println("Elf Scout is taken. Choose another class.");
+                    System.out.println("(!)Elf Scout is taken. Choose another class.");
                     checkInputPlayerTwo();
                 }
                 break;
             }
         } if (!getClassPlayerTwo().equals("1") & !getClassPlayerTwo().equals("2") & !getClassPlayerTwo().equals("3")){
-            System.out.println("Wrong input.");
+            System.out.println("(!)Wrong input.");
             System.out.println("Choose your class (1-3): ");
             checkInputPlayerTwo();
         }
@@ -161,41 +161,41 @@ public class Game {
         // где первым игроком будет объект,
         // выбранный случайно
         // делаем ходы, пока игра не закончится
-        System.out.println("######################################################################");
-        System.out.println("You're playing Dungeons!");
-        System.out.println("######################################################################");
-        System.out.println("The rules are simple!");
-        System.out.println("This game is for two players");
-        System.out.println("You play as adventurers who move down the mine");
-        System.out.println("The goal is to reach 20th level first");
-        System.out.println("There are 3 classes players can choose from: Human-Mage, Dwarf-Warrior and Elf-Scout");
-        System.out.println("Each class have 4 abilities: Fast Descend, Descend, Rest, Ultimate");
-        System.out.println("And of course, the abilities cost stamina");
-        System.out.println("Rest and Descend cost the same for each class");
-        System.out.println("But Ultimate and Fast Descend are different");
-        System.out.println("Here is a list of abilities and required stamina");
-        System.out.println("------------------------------------------------------------");
-        System.out.println("Race     MaxStamina     Descend     FastDescend     Ultimate");
-        System.out.println("Human        30            5            13             15   ");
-        System.out.println("Dwarf        50            5            15             20   ");
-        System.out.println("Elf          40            5            12             24   ");
-        System.out.println("------------------------------------------------------------");
-        System.out.println("All abilities perform same actions except for the Ultimate");
-        System.out.println("Which is different for every class");
-        System.out.println("Fast Descend:  Moves you 3 levels further with a cost depending on a class");
-        System.out.println("Descend:       Moves you further on 1 level and costs 5 power");
-        System.out.println("Rest:          Gives you 3 power-points");
-        System.out.println("Ultimate abilities are a bit more complicated:");
-        System.out.println("Human:         If there is another player on the level below, switch places or move 1 level below");
-        System.out.println("Dwarf:         Moves player 1 level below. Until the next move no one can either outrun him, nor get " +
-                "on the same level as him");
-        System.out.println("Elf:           Moves 3 levels below");
-        System.out.println("Also, at the end of the each move each player regains 2 power");
-        System.out.println("And by the way, the first player is chosen randomly");
-        System.out.println("Now, you're good to go!");
-        System.out.println("Good Luck!");
+        System.out.println("№########################################################################################№");
+        System.out.println("№######@@@####################~~~You're playing Dungeons!~~~####################@@@######№");
+        System.out.println("№########################################################################################№");
+        System.out.println("#################################---The rules are simple!---##############################");
+        System.out.println("##############################---This game is for two players---##########################");
+        System.out.println("#####################---You play as adventurers who move down the mine---#################");
+        System.out.println("########################---The goal is to reach 20th level first---#######################");
+        System.out.println("##-There are 3 classes players can choose from: Human-Mage, Dwarf-Warrior and Elf-Scout-##");
+        System.out.println("######--Each class have 4 abilities: Fast Descend, Descend, Rest, Ultimate--##############");
+        System.out.println("####################---And of course, the abilities cost stamina---#######################");
+        System.out.println("######################--Rest and Descend cost the same for each class--###################");
+        System.out.println("#######################--But Ultimate and Fast Descend are different--####################");
+        System.out.println("###################---Here is a list of abilities and required stamina---#################");
+        System.out.println("@@@@@@@@@@@@@@--------------------------------------------------------------@@@@@@@@@@@@@@");
+        System.out.println("##############|Race     MaxStamina     Descend     FastDescend     Ultimate|##############");
+        System.out.println("##############|Human        30            5            13             15   |##############");
+        System.out.println("##############|Dwarf        50            5            15             20   |##############");
+        System.out.println("##############|Elf          40            5            12             24   |##############");
+        System.out.println("@@@@@@@@@@@@@@--------------------------------------------------------------@@@@@@@@@@@@@@");
+        System.out.println("##############--All abilities perform same actions except for the Ultimate--##############");
+        System.out.println("##########################--Which is different for every class--##########################");
+        System.out.println("######--Fast Descend:  Moves you 3 levels further with a cost depending on a class--######");
+        System.out.println("######--Descend:       Moves you further on 1 level and costs 5 power--###################");
+        System.out.println("######--Rest:          Gives you 3 power-points--#########################################");
+        System.out.println("######--Ultimate abilities are a bit more complicated:####################################");
+        System.out.println("Human:  If there is another player on the level below, switch places or move 1 level below");
+        System.out.println("Dwarf:  Moves player 1 level below. Until the next move no one can neither outrun him, nor");
+        System.out.println("############################--...get on the same level as him--###########################");
+        System.out.println("Elf:    Moves 3 levels below--############################################################");
+        System.out.println("#############--Also, at the end of the each move each player regains 2 power--############");
+        System.out.println("#################---And by the way, the first player is chosen randomly--#################");
+        System.out.println("##############################--Now, you're good to go!--#################################");
+        System.out.println("######################################--Good Luck!--######################################");
             selectClass();
-        System.out.println("Game begins!");
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~The Game begins!~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         //Choosing random player
         Random random = new Random();
         int randomNum = random.nextInt(2);
@@ -270,14 +270,14 @@ public class Game {
 
             if (currentMove.equals("2")){
                 if(player.getCurrentPower() < player.getFastDescendCost()) {
-                    System.out.println("Not enough stamina. Choose other ability.");
+                    System.out.println("(!)Not enough stamina. Choose other ability(!)");
                     action(player, otherPlayer);
                     break;
                 }
                 else {
                     if(player.getCurrentPower() >= player.getFastDescendCost() & dwarfUltimates.isEmpty()){
                         player.fastDescend();
-                        System.out.println(player.getName() + " used Fast Descend ability.");
+                        System.out.println("(Success) " + player.getName() + " used Fast Descend ability.");
                         System.out.println(player.getName() + "'s current level is: " + player.getCurrentLevel() + "; stamina: " + player.getCurrentPower());
                         System.out.println("End of the move. " + player.getName() + " regains 2 stamina points");
                         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
@@ -292,13 +292,13 @@ public class Game {
 
                     if(player.getCurrentPower() >= player.getFastDescendCost() & !dwarfUltimates.isEmpty()){
                         if((player.getCurrentLevel() + 3) >= otherPlayer.getCurrentLevel()){
-                            System.out.println("You can't be further or on the same level with dwarf for 1 move");
+                            System.out.println("(!)You can't be further or on the same level with dwarf for 1 move(!)");
                             System.out.println("Choose other ability.");
                             action(player, otherPlayer);
                             break;
                         }
                         else {
-                            System.out.println(player.getName() + " used Fast Descend ability.");
+                            System.out.println("(Success) " + player.getName() + " used Fast Descend ability.");
                             System.out.println(player.getName() + "'s current level is: " + player.getCurrentLevel() + " and stamina: " + player.getCurrentPower());
                             System.out.println("End of the move. " + player.getName() + " regains 2 stamina points");
                             System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
@@ -313,14 +313,14 @@ public class Game {
 
             if (currentMove.equals("3")){
                 if(player.getCurrentPower() < player.getDescendCost()) {
-                    System.out.println("Not enough stamina. Choose other ability.");
+                    System.out.println("(!)Not enough stamina. Choose other ability(!)");
                     action(player, otherPlayer);
                     break;
                 }
                 else{
                     if(player.getCurrentPower() >= player.getDescendCost() & dwarfUltimates.isEmpty()){
                         player.descend();
-                        System.out.println(player.getName() + " used Descend ability.");
+                        System.out.println("(Success) " + player.getName() + " used Descend ability.");
                         System.out.println(player.getName() + "'s current level is: " + player.getCurrentLevel() + " and stamina: " + player.getCurrentPower());
                         System.out.println("End of the move. " + player.getName() + " regains 2 stamina points");
                         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
@@ -335,21 +335,21 @@ public class Game {
 
                     if(player.getCurrentPower() >= player.getDescendCost() & !dwarfUltimates.isEmpty()){
                         if((player.getCurrentLevel() + 1) >= otherPlayer.getCurrentLevel()){
-                            System.out.println("You can't be further or on the same level with dwarf for 1 move");
+                            System.out.println("(!)You can't be further or on the same level with dwarf for 1 move(!)");
                             System.out.println("Choose other ability.");
                             action(player, otherPlayer);
                             break;
                         }
                         else {
                             player.descend();
-                            System.out.println(player.getName() + " used Descend ability.");
+                            System.out.println("(Success) " + player.getName() + " used Descend ability.");
                             System.out.println(player.getName() + "'s current level is: " + player.getCurrentLevel() + " and stamina: " + player.getCurrentPower());
                             System.out.println("End of the move. " + player.getName() + " regains 2 stamina points");
                             System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
                             dwarfUltimates.remove(0);
-                            break;//пробую
+                            break;
                         }
-                        //break;оставить или убрать
+                        //break;
                     }
                     break;
                 }
@@ -360,7 +360,7 @@ public class Game {
                 if(player.ultimate() == 1){
                     System.out.println(player.getName() + " used Ultimate ability.");
                     if(player.getCurrentPower() < player.getUltimateCost()) {
-                        System.out.println("Not enough stamina. Choose other ability.");
+                        System.out.println("(!)Not enough stamina. Choose other ability(!)");
                         action(player, otherPlayer);
                         break;
                     }
@@ -371,7 +371,7 @@ public class Game {
                                 int playerLevel = player.getCurrentLevel();             //уровень игрока до замены
                                 player.setCurrentLevel(otherPlayer.getCurrentLevel());  //уровень игрока после замены
                                 otherPlayer.setCurrentLevel(playerLevel);               //уровень другого игрока = уровень игрока
-                                System.out.println("Since there was other player below the " + player.getName() + ",");
+                                System.out.println("(Success)Since there was other player below the " + player.getName() + ",");
                                 System.out.println(player.getName() + " swaps places.");
                                 player.endOfTheMove();
                                 System.out.println(player.getName() + "'s current level is: " + player.getCurrentLevel() + " and stamina: " + player.getCurrentPower());
@@ -387,7 +387,7 @@ public class Game {
                                     break;
                                 }
                                 else {//или продолжаем
-                                    System.out.println("Since there was nobody below the " + player.getName() + ",");
+                                    System.out.println("(Success)Since there was nobody below the " + player.getName() + ",");
                                     System.out.println(player.getName() + " moves one level further.");
                                     System.out.println(player.getName() + "'s current level is: " + player.getCurrentLevel() + " and stamina: " + player.getCurrentPower());
                                     player.endOfTheMove();
@@ -401,7 +401,7 @@ public class Game {
                             if (otherPlayer.getCurrentLevel() - player.getCurrentLevel() > 1){
                                 player.ultimateUse();
                                 player.setCurrentLevel(player.getCurrentLevel()+1);
-                                System.out.println("Since there was nobody below the " + player.getName() + ",");
+                                System.out.println("(Success)Since there was nobody below the " + player.getName() + ",");
                                 System.out.println(player.getName() + " moves one level further.");
                                 System.out.println(player.getName() + "'s current level is: " + player.getCurrentLevel() + " and stamina: " + player.getCurrentPower());
                                 player.endOfTheMove();
@@ -410,7 +410,7 @@ public class Game {
                                 break;
                             }
                             else {
-                                System.out.println("You can't be further or on the same level with dwarf for 1 move");
+                                System.out.println("(!)You can't be further or on the same level with dwarf for 1 move(!)");
                                 System.out.println("Choose other ability.");
                                 action(player, otherPlayer);
                                 break;
@@ -418,10 +418,10 @@ public class Game {
                         }
                     }
                 }
-                if(player.ultimate() == 2){
+                if(player.ultimate() == 2){///Dwarf's Ultimate
                     System.out.println(player.getName() + " used Ultimate ability.");
                     if(player.getCurrentPower() < player.getUltimateCost()) {
-                        System.out.println("Not enough stamina. Choose other ability.");
+                        System.out.println("(!)Not enough stamina. Choose other ability(!)");
                         action(player, otherPlayer);
                         break;
                     }
@@ -435,7 +435,7 @@ public class Game {
                             break;
                         }
                         else {
-                            System.out.println(player.getName() + " moves one level further.");
+                            System.out.println("(Success) " + player.getName() + " moves one level further.");
                             System.out.println(player.getName() + "'s current level is: " + player.getCurrentLevel() + " and stamina: " + player.getCurrentPower());
                             player.endOfTheMove();
                             System.out.println("End of the move. " + player.getName() + " regains 2 stamina points");
@@ -447,7 +447,7 @@ public class Game {
                 if(player.ultimate() == 3){
                     System.out.println(player.getName() + " used Ultimate ability.");
                     if(player.getCurrentPower() < player.getUltimateCost()) {
-                        System.out.println("Not enough stamina. Choose other ability.");
+                        System.out.println("(!)Not enough stamina. Choose other ability(!)");
                         action(player, otherPlayer);
                         break;
                     }
@@ -461,14 +461,14 @@ public class Game {
                             }
                             else {
                                 player.endOfTheMove();
-                                System.out.println(player.getName() + " moves 3 level further.");
+                                System.out.println("(Success) " + player.getName() + " moves 3 level further.");
                                 System.out.println(player.getName() + "'s current level is: " + player.getCurrentLevel() + " and stamina: " + player.getCurrentPower());
                                 System.out.println("End of the move. " + player.getName() + " regains 2 stamina points");
                                 break;
                             }
                         }
                         else {
-                            System.out.println("You can't be further or on the same level with dwarf for 1 move");
+                            System.out.println("(!)You can't be further or on the same level with dwarf for 1 move(!)");
                             System.out.println("Choose other ability.");
                             action(player, otherPlayer);
                             break;
@@ -479,18 +479,18 @@ public class Game {
         }
         //coz while-else is impossible in java
         if(!getCurrentMove().equals("1") & !getCurrentMove().equals("2") & !getCurrentMove().equals("3")& !getCurrentMove().equals("4")){
-            System.out.println("Wrong ability input. Please, repeat.");
+            System.out.println("(!)Wrong ability input. Please, repeat.");
             action(player, otherPlayer);
         }
     }//метод, вызываемый из move()
 
     void move(){
         if (!gameFinished){
-            for (Player player : players){          //выбираем игроков поочереди
-                if(!gameFinished){                  //Передам два объекта методу action для реализации способностей
-                    playersCopy.addAll(players);    //Нам надо передать в метод action() двух игроков
-                    playersCopy.remove(player);     //выбранного в foreach и второго для сравнения параметров
-                    Player otherPlayer = playersCopy.get(0);//поэтому делаю резервную коллекцию
+            for (Player player : players){          //players take turns
+                if(!gameFinished){                  //Передам два объекта методу action to execute abilities
+                    playersCopy.addAll(players);    //Нам надо передать в метод action() two players
+                    playersCopy.remove(player);     //one is chosen в foreach и второго для сравнения параметров
+                    Player otherPlayer = playersCopy.get(0);//поэтому делаю back-up коллекцию
                     action(player, otherPlayer);    //выбираем игрока и ждем, пока он успешно осуществит действие
                 }
             }

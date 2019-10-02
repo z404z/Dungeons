@@ -36,26 +36,26 @@ abstract class Player {
     //public abstract void rest();
     public void rest(){
         int currentPower = this.getCurrentPower();
-        this.setCurrentPower(currentPower+3);
+        this.setCurrentPower(currentPower + 3);
     }
     //public abstract void descend();
     public void descend(){
         int currentPower = this.getCurrentPower();
         this.setCurrentLevel(getCurrentLevel() + 1);
-        this.setCurrentPower(currentPower-getDescendCost());
+        this.setCurrentPower(currentPower - getDescendCost());
     }
     //public abstract void fastDescend();
     public void fastDescend(){
         int currentPower = this.getCurrentPower();
         this.setCurrentLevel(getCurrentLevel() + 3);
-        this.setCurrentPower(currentPower-getFastDescendCost());
+        this.setCurrentPower(currentPower - getFastDescendCost());
     }
     //единственный абстрактный метод, т.к. полиморфизм
     public abstract int ultimate();
     //public abstract void ultimateUse();
     public void ultimateUse(){
         int currentPower = this.getCurrentPower();
-        this.setCurrentPower(currentPower-getUltimateCost());
+        this.setCurrentPower(currentPower - getUltimateCost());
     }
     //public abstract void endOfTheMove();
     public void endOfTheMove(){
